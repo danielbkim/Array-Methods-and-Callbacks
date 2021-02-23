@@ -7,6 +7,11 @@ Practice accessing data by console.log-ing the following pieces of data note, yo
 
 //(a) Home Team name for 2014 world cup final
 
+// fifaData.filter(function(game){
+//     if (game[])
+//     return game["Stage"];
+// })
+
 //(b) Away Team name for 2014 world cup final
 
 //(c) Home Team goals for 2014 world cup final
@@ -24,10 +29,11 @@ Use getFinals to do the following:
 hint - you should be looking at the stage key inside of the objects
 */
 
-console.log("Hello World");
 
-function getFinals(/* code here */) {
-   /* code here */
+function getFinals(data) {
+    return data.filter(function(game){
+        return game["Stage"];
+    })
 }
 
 
@@ -75,12 +81,12 @@ function getWinnersByYear(/* code here */) {
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher order function getAverageGoals to do the following: 
- 1. Receive the callback function getFinals from task 2 ensure you pass in the data as an argument
- 2. Return the the average number of the total home team goals and away team goals scored per match and round to the second decimal place. 
- 
- (Hint: use .reduce and do this in 2 steps) 
- 
- Example of invocation: getAverageGoals(getFinals(fifaData));
+1. Receive the callback function getFinals from task 2 ensure you pass in the data as an argument
+2. Return the the average number of the total home team goals and away team goals scored per match and round to the second decimal place. 
+
+(Hint: use .reduce and do this in 2 steps) 
+
+Example of invocation: getAverageGoals(getFinals(fifaData));
 */
 
 function getAverageGoals(/* code here */) {
