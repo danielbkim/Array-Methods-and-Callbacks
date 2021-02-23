@@ -44,8 +44,14 @@ Use the higher-order function called getYears to do the following:
 2. Receive a callback function getFinals from task 2 
 3. Return an array called years containing all of the years in the getFinals data set*/
 
-function getYears(/* code here */) {
-    /* code here */
+function getYears(array, callback) {
+    let years = [];
+    // array is the data of all world cup rounds
+    // take the callback function from above which will be Task 2 function
+    array.forEach(function(item) {
+        // loop through entire data array that has been filtered to go by final and pull only the speific
+    });
+
 }
 
 
@@ -57,8 +63,8 @@ Use the higher-order function getWinners to do the following:
 3. Determines the winner (home or away) of each `finals` game. 
 4. Returns the names of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
-    /* code here */
+function getWinners(array, callback) {
+    
 }
 
 
