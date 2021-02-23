@@ -68,7 +68,18 @@ Use the higher-order function getWinners to do the following:
 4. Returns the names of all winning countries in an array called `winners` */ 
 
 function getWinners(array, callback) {
-    
+    let winners = [];
+    let finalsArray = callback(array);
+    // store the same data
+    finalsArray.forEach(function(game){
+        if(game["Home Team Goals"] > game["Away Team Goals"]) {
+            winners.push(game["Home Team Name"]);
+        } else {
+            winners.push(game["Away Team Name"]);
+        }
+    });
+
+    return winners;
 }
 
 
