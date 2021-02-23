@@ -32,7 +32,7 @@ hint - you should be looking at the stage key inside of the objects
 
 function getFinals(data) {
     return data.filter(function(game){
-        return game["Stage"];
+        return game["Stage"] === "Final";
     })
 }
 
@@ -46,12 +46,16 @@ Use the higher-order function called getYears to do the following:
 
 function getYears(array, callback) {
     let years = [];
+    let finalsArray = callback(array);
+    // store the result of callback(array) into a variable so you can use it later
     // array is the data of all world cup rounds
     // take the callback function from above which will be Task 2 function
-    array.forEach(function(item) {
-        // loop through entire data array that has been filtered to go by final and pull only the speific
+    finalsArray.forEach(function(item) {
+        // loop through entire data array that has been filtered to go by final and pull only the specific
+        years.push(item["Year"]);
     });
-
+    
+    return years;
 }
 
 
