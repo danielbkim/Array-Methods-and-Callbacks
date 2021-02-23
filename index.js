@@ -24,6 +24,8 @@ Use getFinals to do the following:
 hint - you should be looking at the stage key inside of the objects
 */
 
+console.log("Hello World");
+
 function getFinals(/* code here */) {
    /* code here */
 }
