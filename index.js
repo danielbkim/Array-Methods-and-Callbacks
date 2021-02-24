@@ -94,8 +94,48 @@ Use the higher-order function getWinnersByYear to do the following:
 hint: the strings returned need to exactly match the string in step 4.
  */
 
-function getWinnersByYear(/* code here */) {
-    /* code here */
+function getWinnersByYear(games, yearsFunc, winnersFunc) {
+    // let yearsArr = yearsFunc(games, getFinals(games))
+    // let allOfTheFinals = getFinals(array); // result of this should give us an array of all the finals
+    // we need to start with the finals array - collection of all world cups
+    let yearsArray = yearsFunc(games, getFinals); // same number of elements and each element is going to match the other 
+    let winnersArray = winnersFunc(games, getFinals);
+
+    // console.log('This is the games array: ', games);
+    let name = yearsArray.map((year, index) => {
+        return `In ${year}, ${winnersArray[index]} won the world cup!`;
+    })
+
+    let name = winnersArray.map(function(winner, index){
+        return `In ${yearsArray[index]}, ${winner} won the world cup!`;
+    })
+    console.log(name);
+    return name;
+
+    // console.log(sentences);
+
+    // yearsArray.forEach(function(year, index){
+    //     let sentence = `In ${yearsArray[index]}, ${winnersArray[i]} won the world cup!`
+    //     sentences.push
+    // })
+
+    // return yearsArray.map(function(game, index){
+    //     return 
+    // })
+
+    // let allOfTheYears = yearsFunc(allOfTheFinals) // (array data, callback)
+    // pass that to the yearsFunc to get all the years
+    // console.log(allOfTheFinals);
+    // console.log(games);
+
+    // console.log();
+    // return sentences
+    // return an array of strings that say the above
+    // return sentences after pushing all the strings
+
+    // pass that finals array again to winnersFunc to get all the winners
+    // template literal where we take the year of the world cup and then the country that won the world cup
+
 }
 
 
@@ -110,8 +150,8 @@ Use the higher order function getAverageGoals to do the following:
 Example of invocation: getAverageGoals(getFinals(fifaData));
 */
 
-function getAverageGoals(/* code here */) {
-   /* code here */
+function getAverageGoals(array) {
+
 }
 
 
