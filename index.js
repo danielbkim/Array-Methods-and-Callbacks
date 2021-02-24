@@ -98,18 +98,25 @@ function getWinnersByYear(games, yearsFunc, winnersFunc) {
     // let yearsArr = yearsFunc(games, getFinals(games))
     // let allOfTheFinals = getFinals(array); // result of this should give us an array of all the finals
     // we need to start with the finals array - collection of all world cups
+    // isolated the final years and the final winners by country
     let yearsArray = yearsFunc(games, getFinals); // same number of elements and each element is going to match the other 
     let winnersArray = winnersFunc(games, getFinals);
+
+    // [10234,2345,3456,4567,1234]
+    // [US0A, US, UK, Ireland, Candyland]
+
+// forEach doesn't return a new array - have to do empty array method
+// map returns a new array, return result of map, it inherently returns a new array based on your callback instructions
 
     // console.log('This is the games array: ', games);
     let name = yearsArray.map((year, index) => {
         return `In ${year}, ${winnersArray[index]} won the world cup!`;
     })
 
-    let name = winnersArray.map(function(winner, index){
-        return `In ${yearsArray[index]}, ${winner} won the world cup!`;
-    })
-    console.log(name);
+    // let name = winnersArray.map(function(winner, index){
+    //     return `In ${yearsArray[index]}, ${winner} won the world cup!`;
+    // })
+
     return name;
 
     // console.log(sentences);
@@ -135,7 +142,6 @@ function getWinnersByYear(games, yearsFunc, winnersFunc) {
 
     // pass that finals array again to winnersFunc to get all the winners
     // template literal where we take the year of the world cup and then the country that won the world cup
-
 }
 
 
@@ -150,11 +156,20 @@ Use the higher order function getAverageGoals to do the following:
 Example of invocation: getAverageGoals(getFinals(fifaData));
 */
 
-function getAverageGoals(array) {
+// passing in result of 'getFinals(fifaData)'
+function getAverageGoals(finalsArray) {
+    // console.log(finalsArray);
+    // we want to take out the total home team goals and away team goals
+    
+    // reduce for home team goals
+    const goalTotal = finalsArray.reduce(function(accumulator, game){
+        // console.log('This is the accumulator: ', accumulator);
+        return accumulator + game["Home Team Goals"] + game["Away Team Goals"];
+    }, 0);
 
+    return (goalTotal / finalsArray.length).toFixed(2);
+    // roung to the second decimal place
 }
-
-
 
 
 /// 🥅 STRETCH 🥅 ///
